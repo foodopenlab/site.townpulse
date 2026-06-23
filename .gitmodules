@@ -1,0 +1,9 @@
+[submodule "com.pulse"]
+	path = com.pulse
+	url = https://github.com/foodopenlab/site.townpulse.api.git
+[submodule "vault"]
+	path = vault
+	url = https://github.com/foodopenlab/site.townpulse.docs.git
+[submodule "town.www"]
+	path = town.www
+	url = https://github.com/foodopenlab/site.townpulse.www.git
