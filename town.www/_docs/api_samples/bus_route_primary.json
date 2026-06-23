@@ -1,0 +1,107 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "endnodenm": "형석중.고등학교",
+            "endvehicletime": 2242,
+            "routeid": "CJB270002000",
+            "routeno": 105,
+            "routetp": "간선버스",
+            "startnodenm": "석판종점",
+            "startvehicletime": "0540"
+          },
+          {
+            "endnodenm": "한국교통대학교 증평캠퍼스",
+            "endvehicletime": 2230,
+            "routeid": "CJB270002200",
+            "routeno": 111,
+            "routetp": "간선버스",
+            "startnodenm": "동부종점",
+            "startvehicletime": "0530"
+          },
+          {
+            "endnodenm": "국동리",
+            "endvehicletime": 2100,
+            "routeid": "CJB270002300",
+            "routeno": 112,
+            "routetp": "지선버스",
+            "startnodenm": "정하",
+            "startvehicletime": "0630"
+          },
+          {
+            "endnodenm": "충북보건과학대학교",
+            "endvehicletime": 2230,
+            "routeid": "CJB270002500",
+            "routeno": 115,
+            "routetp": "간선버스",
+            "startnodenm": "동부종점",
+            "startvehicletime": "0540"
+          },
+          {
+            "endnodenm": "남부종점",
+            "endvehicletime": 2235,
+            "routeid": "CJB270002900",
+            "routeno": "20-1",
+            "routetp": "순환버스",
+            "startnodenm": "남부종점",
+            "startvehicletime": "0545"
+          },
+          {
+            "endnodenm": "남부종점",
+            "endvehicletime": 2245,
+            "routeid": "CJB270003000",
+            "routeno": "20-2",
+            "routetp": "순환버스",
+            "startnodenm": "남부종점",
+            "startvehicletime": "0540"
+          },
+          {
+            "endnodenm": "미동산수목원",
+            "endvehicletime": 2237,
+            "routeid": "CJB270003100",
+            "routeno": 211,
+            "routetp": "간선버스",
+            "startnodenm": "북부공영차고지",
+            "startvehicletime": "0540"
+          },
+          {
+            "endnodenm": "삼항리",
+            "endvehicletime": 2125,
+            "routeid": "CJB270003400",
+            "routeno": 212,
+            "routetp": "지선버스",
+            "startnodenm": "동부종점",
+            "startvehicletime": "0600"
+          },
+          {
+            "endnodenm": "한계리종점",
+            "endvehicletime": 2130,
+            "routeid": "CJB270004100",
+            "routeno": 214,
+            "routetp": "지선버스",
+            "startnodenm": "동부종점",
+            "startvehicletime": "0820"
+          },
+          {
+            "endnodenm": "내암종점",
+            "endvehicletime": 2150,
+            "routeid": "CJB270004200",
+            "routeno": 215,
+            "routetp": "지선버스",
+            "startnodenm": "동부종점",
+            "startvehicletime": "0600"
+          }
+        ]
+      },
+      "numOfRows": 10,
+      "pageNo": 1,
+      "totalCount": 118
+    }
+  }
+}

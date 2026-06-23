@@ -1,0 +1,97 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "citycode": 12,
+            "gpslati": 36.63686,
+            "gpslong": 127.48859,
+            "nodeid": "SJB270051447",
+            "nodenm": "지하상가",
+            "nodeno": 1541
+          },
+          {
+            "citycode": 33010,
+            "gpslati": 36.63682718,
+            "gpslong": 127.48855636,
+            "nodeid": "CJB270000024",
+            "nodenm": "청년창업지원센터",
+            "nodeno": 1541
+          },
+          {
+            "citycode": 33010,
+            "gpslati": 36.63699526,
+            "gpslong": 127.48809267,
+            "nodeid": "CJB270000006",
+            "nodenm": "청년창업지원센터",
+            "nodeno": 1540
+          },
+          {
+            "citycode": 33320,
+            "gpslati": 36.63828,
+            "gpslong": 127.490074,
+            "nodeid": "BEB270000015",
+            "nodenm": "상당공원",
+            "nodeno": 1503
+          },
+          {
+            "citycode": 12,
+            "gpslati": 36.63827951,
+            "gpslong": 127.49007548,
+            "nodeid": "SJB270000010",
+            "nodenm": "상당공원",
+            "nodeno": 1503
+          },
+          {
+            "citycode": 33010,
+            "gpslati": 36.63827951,
+            "gpslong": 127.49007548,
+            "nodeid": "CJB270000010",
+            "nodenm": "상당공원",
+            "nodeno": 1503
+          },
+          {
+            "citycode": 12,
+            "gpslati": 36.63833,
+            "gpslong": 127.48999,
+            "nodeid": "SJB270051580",
+            "nodenm": "상당공원",
+            "nodeno": 1503
+          },
+          {
+            "citycode": 33010,
+            "gpslati": 36.63665262,
+            "gpslong": 127.48700561,
+            "nodeid": "CJB270000025",
+            "nodenm": "청주대교",
+            "nodeno": 1543
+          },
+          {
+            "citycode": 12,
+            "gpslati": 36.63846,
+            "gpslong": 127.49026,
+            "nodeid": "SJB270051579",
+            "nodenm": "상당공원",
+            "nodeno": 1504
+          },
+          {
+            "citycode": 33010,
+            "gpslati": 36.63867605,
+            "gpslong": 127.49022876,
+            "nodeid": "CJB270000009",
+            "nodenm": "상당공원",
+            "nodeno": 1504
+          }
+        ]
+      },
+      "numOfRows": 10,
+      "pageNo": 1,
+      "totalCount": 24
+    }
+  }
+}

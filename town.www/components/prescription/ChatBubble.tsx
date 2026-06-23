@@ -1,0 +1,14 @@
+export function ChatBubble({ role, content }: { role: "user" | "assistant"; content: string }) {
+  const isUser = role === "user";
+  return (
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
+      <div
+        className={`max-w-[90%] rounded-xl px-4 py-2 text-sm whitespace-pre-wrap ${
+          isUser ? "bg-primary text-white" : "border border-border bg-muted"
+        }`}
+      >
+        {content || (role === "assistant" ? "…" : "")}
+      </div>
+    </div>
+  );
+}

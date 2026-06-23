@@ -1,0 +1,176 @@
+# Swagger Parameters 기준 (2026-06-21)
+# #2·#3: stdgCd(법정동) | #4: mvinAdmmCd/mvtAdmmCd(행정기관코드)
+# url = Execute Request URL 의 ? 앞 (Servers 경로 + operation)
+
+defaults:
+  timeout_sec: 30
+
+probes:
+  - id: "15108071_household"
+    name: "API#2 인구·세대현황"
+    dataset_id: 15108071
+    portal: "https://www.data.go.kr/data/15108071/openapi.do"
+    env_key: POPULATION_HOUSEHOLD_API_KEY
+    snap_targets:
+      - population_total
+      - registered_households
+    enabled: true
+    swagger_op: "/selectStdgPpltnHhStus"
+    url: "https://apis.data.go.kr/1741000/stdgPpltnHhStus/selectStdgPpltnHhStus"
+    params:
+      serviceKey: "${POPULATION_HOUSEHOLD_API_KEY}"
+      stdgCd: "${PROBE_STDG_CD}"
+      srchFrYm: "${PROBE_SRCH_FR_YM}"
+      srchToYm: "${PROBE_SRCH_TO_YM}"
+      lv: "4"
+      regSeCd: "1"
+      type: "json"
+      pageNo: 1
+      numOfRows: 10
+
+  - id: "15108074_age"
+    name: "API#3 성/연령별 인구"
+    dataset_id: 15108074
+    portal: "https://www.data.go.kr/data/15108074/openapi.do"
+    env_key: POPULATION_AGE_API_KEY
+    snap_targets:
+      - population_65plus
+      - population_youth
+    enabled: true
+    swagger_op: "/selectStdgSexdAgePpltn"
+    url: "https://apis.data.go.kr/1741000/stdgSexdAgePpltn/selectStdgSexdAgePpltn"
+    params:
+      serviceKey: "${POPULATION_AGE_API_KEY}"
+      stdgCd: "${PROBE_STDG_CD}"
+      srchFrYm: "${PROBE_SRCH_FR_YM}"
+      srchToYm: "${PROBE_SRCH_TO_YM}"
+      lv: "4"
+      regSeCd: "1"
+      type: "json"
+      pageNo: 1
+      numOfRows: 10
+
+  - id: "15108093_migration"
+    name: "API#4 지역별 인구이동"
+    dataset_id: 15108093
+    portal: "https://www.data.go.kr/data/15108093/openapi.do"
+    env_key: POPULATION_MIGRATION_API_KEY
+    snap_targets:
+      - net_youth_migration
+    enabled: true
+    swagger_op: "/selectPpltnDataStus"
+    note: "regSeCd 없음 — 만N세 합산으로 net_youth_migration 파생"
+    url: "https://apis.data.go.kr/1741000/ppltnDataStus/selectPpltnDataStus"
+    params:
+      serviceKey: "${POPULATION_MIGRATION_API_KEY}"
+      mvinAdmmCd: "${PROBE_MVIN_ADMM_CD}"
+      mvtAdmmCd: "${PROBE_MVT_ADMM_CD}"
+      srchFrYm: "${PROBE_SRCH_FR_YM}"
+      srchToYm: "${PROBE_SRCH_TO_YM}"
+      lv: "3"
+      type: "json"
+      pageNo: 1
+      numOfRows: 10
+
+  - id: "building_hub_title"
+    name: "API#1 건축HUB getBrTitleInfo"
+    dataset_id: 15134735
+    portal: "https://www.data.go.kr/data/15134735/openapi.do"
+    env_key: BUILDING_HUB_API_KEY
+    snap_targets:
+      - residential_buildings
+    enabled: true
+    url: "https://apis.data.go.kr/1613000/BldRgstHubService/getBrTitleInfo"
+    params:
+      serviceKey: "${BUILDING_HUB_API_KEY}"
+      sigunguCd: "${PROBE_SIGUNGU_CODE}"
+      bjdongCd: "${PROBE_BJDONG_CD}"
+      _type: json
+      numOfRows: 10
+      pageNo: 1
+
+  - id: "tago_city_codes"
+    name: "API#6 TAGO 도시코드 목록(getCtyCodeList)"
+    dataset_id: 15098529
+    portal: "https://www.data.go.kr/data/15098529/openapi.do"
+    note: "BusRouteInfoInqireService. 요청변수 없음 — 전국 목록 반환. 충북(33xxx)은 probe 후 tago_city_codes_chungbuk.json으로 추출."
+    env_key: BUS_ROUTE_API_KEY
+    snap_targets:
+      - tago_city_code
+    enabled: true
+    url: "https://apis.data.go.kr/1613000/BusRouteInfoInqireService/getCtyCodeList"
+    params:
+      serviceKey: "${BUS_ROUTE_API_KEY}"
+      _type: json
+      numOfRows: 300
+      pageNo: 1
+
+  - id: "bus_route_primary"
+    name: "API#6 버스노선 1단계(노선목록)"
+    dataset_id: 15098529
+    portal: "https://www.data.go.kr/data/15098529/openapi.do"
+    note: "BusRouteInfoInqireService(TAGO). cityCode=REGION.tago_city_code (sigungu_code 아님). data.go.kr TAGO 중복신청과 동일 서비스."
+    env_key: BUS_ROUTE_API_KEY
+    snap_targets:
+      - bus_route_count
+    enabled: true
+    url: "https://apis.data.go.kr/1613000/BusRouteInfoInqireService/getRouteNoList"
+    params:
+      serviceKey: "${BUS_ROUTE_API_KEY}"
+      _type: json
+      cityCode: "${PROBE_BUS_CITY_CODE}"
+      numOfRows: 10
+      pageNo: 1
+
+  - id: "bus_route_detail"
+    name: "API#6 버스노선 2단계(배차)"
+    dataset_id: 15098529
+    portal: "https://www.data.go.kr/data/15098529/openapi.do"
+    env_key: BUS_ROUTE_API_KEY
+    snap_targets:
+      - avg_bus_interval_min
+    enabled: true
+    url: "https://apis.data.go.kr/1613000/BusRouteInfoInqireService/getRouteInfoIem"
+    params:
+      serviceKey: "${BUS_ROUTE_API_KEY}"
+      _type: json
+      cityCode: "${PROBE_BUS_CITY_CODE}"
+      routeId: "CJB270002000"
+
+  - id: "bus_route_stops"
+    name: "API#6 노선별경유정류소(GPS)"
+    dataset_id: 15098529
+    portal: "BusRouteInfoInqireService — #6 동일 신청"
+    note: "마을 좌표 매칭용. routeId는 bus_route_primary 샘플 참고."
+    env_key: BUS_ROUTE_API_KEY
+    snap_targets:
+      - nearest_stop_distance_m
+      - bus_stops_within_1km
+    enabled: true
+    url: "https://apis.data.go.kr/1613000/BusRouteInfoInqireService/getRouteAcctoThrghSttnList"
+    params:
+      serviceKey: "${BUS_ROUTE_API_KEY}"
+      _type: json
+      cityCode: "${PROBE_BUS_CITY_CODE}"
+      routeId: "CJB270002000"
+      numOfRows: 10
+      pageNo: 1
+
+  - id: "15098534_stop_nearby"
+    name: "버스정류소 근접(500m)"
+    dataset_id: 15098534
+    portal: "https://www.data.go.kr/data/15098534/openapi.do"
+    note: "BusSttnInfoInqireService — getCrdntPrxmtSttnList (~500m 고정, 반경 파라미터 없음). 1km는 §10-9 노선카탈로그 병합."
+    env_key: BUS_STOP_API_KEY
+    snap_targets:
+      - nearest_stop_distance_m
+      - bus_stops_within_1km
+    enabled: true
+    url: "https://apis.data.go.kr/1613000/BusSttnInfoInqireService/getCrdntPrxmtSttnList"
+    params:
+      serviceKey: "${BUS_STOP_API_KEY}"
+      _type: json
+      gpsLati: "${PROBE_GPS_LATI}"
+      gpsLong: "${PROBE_GPS_LONG}"
+      numOfRows: 10
+      pageNo: 1

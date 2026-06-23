@@ -1,0 +1,12 @@
+[
+  { "citycode": 33010, "cityname": "청주시" },
+  { "citycode": 33020, "cityname": "충주시" },
+  { "citycode": 33030, "cityname": "제천시" },
+  { "citycode": 33320, "cityname": "보은군" },
+  { "citycode": 33330, "cityname": "옥천군" },
+  { "citycode": 33340, "cityname": "영동군" },
+  { "citycode": 33350, "cityname": "진천군" },
+  { "citycode": 33360, "cityname": "괴산군" },
+  { "citycode": 33370, "cityname": "음성군" },
+  { "citycode": 33380, "cityname": "단양군" }
+]

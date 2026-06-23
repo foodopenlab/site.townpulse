@@ -1,0 +1,117 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL SERVICE."
+    },
+    "body": {
+      "items": {
+        "item": [
+          {
+            "gpslati": 36.58322655,
+            "gpslong": 127.44386086,
+            "nodeid": "CJB270001031",
+            "nodenm": "석판종점",
+            "nodeno": 4089,
+            "nodeord": 1,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.58516119,
+            "gpslong": 127.44208637,
+            "nodeid": "CJB283000320",
+            "nodenm": "대련리",
+            "nodeno": 1031,
+            "nodeord": 2,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.59392919,
+            "gpslong": 127.44160049,
+            "nodeid": "CJB283000259",
+            "nodenm": "석판1리",
+            "nodeno": 3470,
+            "nodeord": 3,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.59766715,
+            "gpslong": 127.44146533,
+            "nodeid": "CJB270001094",
+            "nodenm": "돌간꽃마을",
+            "nodeno": 4288,
+            "nodeord": 4,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.6019422,
+            "gpslong": 127.44047544,
+            "nodeid": "CJB270001014",
+            "nodenm": "석판2리",
+            "nodeno": 3471,
+            "nodeord": 5,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.60428712,
+            "gpslong": 127.44066989,
+            "nodeid": "CJB283000327",
+            "nodenm": "석판교차로",
+            "nodeno": 1199,
+            "nodeord": 6,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.60708276,
+            "gpslong": 127.44108626,
+            "nodeid": "CJB283000141",
+            "nodenm": "대산마을",
+            "nodeno": 2129,
+            "nodeord": 7,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.61061173,
+            "gpslong": 127.44240526,
+            "nodeid": "CJB283000179",
+            "nodenm": "가경주공4단지아파트",
+            "nodeno": 2095,
+            "nodeord": 8,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.61591658,
+            "gpslong": 127.43804972,
+            "nodeid": "CJB271000057",
+            "nodenm": "가경주공6단지아파트",
+            "nodeno": 2097,
+            "nodeord": 9,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          },
+          {
+            "gpslati": 36.61786886,
+            "gpslong": 127.4364299,
+            "nodeid": "CJB271000738",
+            "nodenm": "감나무실공원",
+            "nodeno": 4464,
+            "nodeord": 10,
+            "routeid": "CJB270002000",
+            "updowncd": 0
+          }
+        ]
+      },
+      "numOfRows": 10,
+      "pageNo": 1,
+      "totalCount": 136
+    }
+  }
+}
