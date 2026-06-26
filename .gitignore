@@ -1,0 +1,46 @@
+# Submodules dependencies/builds
+town.www/node_modules/
+town.www/.next/
+com.pulse/__pycache__/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Keys and Certs (Crucial Security)
+*.pem
+*.key
+*.cert
+*.pfx
+
+# Ollama Models and Weights
+*.gguf
+*.bin
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+run_backend.log
+
+# Virtual environments
+venv/
+.venv/
+townenv/
+
+# Pytest and coverage
+.pytest_cache/
+
+# IDE and Editor configs
+.vscode/
+.idea/
+*.swp
+
+# OS temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
