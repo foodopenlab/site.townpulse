@@ -1,0 +1,37 @@
+services:
+  # 백엔드 서비스 설정
+  backend:
+    build:
+      context: ./com.pulse
+      dockerfile: Dockerfile
+    container_name: fastapi_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./com.pulse:/app
+      - /app/__pycache__
+    env_file:
+      - ./com.pulse/.env
+    environment:
+      OLLAMA_HOST: http://host.docker.internal:11434
+
+  # 프론트엔드 서비스 설정
+  frontend:
+    build:
+      context: ./town.www
+      dockerfile: Dockerfile
+    container_name: nextjs_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./town.www:/app
+      - /app/.next
+      - /app/node_modules
+    env_file:
+      - ./town.www/.env.local
+    environment:
+      BACKEND_URL: http://backend:8000
+    depends_on:
+      - backend
+
+
